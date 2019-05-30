@@ -8,13 +8,14 @@ public class Users {
     private String email;
     private String address;
     private String pass;
-    private double number;
-    private double phonenum;
-    private double cardnum;
+    private String number;
+    private String phonenum;
+    private String cardnum;
     private double address_latitude;
     private double address_Longitude;
+    private int cardInventory;
 
-    public Users(String username, int id, String first_name, String last_name, String email, String address, String pass, double number, double phonenum, double cardnum, double address_Longitude, double address_latitude) {
+    public Users(String username, int id, String first_name, String last_name, String email, String address, String pass, String number, String phonenum, String cardnum, double address_latitude, double address_Longitude, int cardInventory) {
         this.username = username;
         this.id = id;
         this.first_name = first_name;
@@ -25,24 +26,9 @@ public class Users {
         this.number = number;
         this.phonenum = phonenum;
         this.cardnum = cardnum;
-        this.address_Longitude = address_Longitude;
         this.address_latitude = address_latitude;
-    }
-
-    public double getAddress_latitude() {
-        return address_latitude;
-    }
-
-    public void setAddress_latitude(double address_latitude) {
-        this.address_latitude = address_latitude;
-    }
-
-    public double getAddress_Longitude() {
-        return address_Longitude;
-    }
-
-    public void setAddress_Longitude(double address_Longitude) {
         this.address_Longitude = address_Longitude;
+        this.cardInventory = cardInventory;
     }
 
     public String getUsername() {
@@ -101,27 +87,51 @@ public class Users {
         this.pass = pass;
     }
 
-    public double getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(double number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public double getPhonenum() {
+    public String getPhonenum() {
         return phonenum;
     }
 
-    public void setPhonenum(double phonenum) {
+    public void setPhonenum(String phonenum) {
         this.phonenum = phonenum;
     }
 
-    public double getCardnum() {
+    public String getCardnum() {
         return cardnum;
     }
 
-    public void setCardnum(double cardnum) {
+    public void setCardnum(String cardnum) {
         this.cardnum = cardnum;
+    }
+
+    public double getAddress_latitude() {
+        return address_latitude;
+    }
+
+    public void setAddress_latitude(double address_latitude) {
+        this.address_latitude = address_latitude;
+    }
+
+    public double getAddress_Longitude() {
+        return address_Longitude;
+    }
+
+    public void setAddress_Longitude(double address_Longitude) {
+        this.address_Longitude = address_Longitude;
+    }
+
+    public int getCardInventory() {
+        return cardInventory;
+    }
+
+    public void setCardInventory(int cardInventory) {
+        this.cardInventory = cardInventory;
     }
 }

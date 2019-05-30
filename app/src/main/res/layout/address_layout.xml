@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <LinearLayout
-        android:id="@+id/map_fragment"
+        android:id="@+id/map_fragment_"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -17,7 +16,7 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddressLocation" />
+    tools:context=".Address" />
     </LinearLayout>
     <LinearLayout
         android:layout_alignParentBottom="true"
@@ -25,12 +24,11 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btn_selected"
+            android:id="@+id/btn_selected_ok"
             android:layout_width="match_parent"
             android:text="ok"
             android:background="@drawable/rounded_btn2"
             android:textSize="20dp"
             android:layout_height="wrap_content" />
-
     </LinearLayout>
 </RelativeLayout>

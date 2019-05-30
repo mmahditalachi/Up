@@ -18,8 +18,6 @@ public class SignUp extends Activity {
         setContentView(R.layout.singn_up_layout);
         Map_btn();
         Sign_up();
-
-
     }
     public void Map_btn(){
         map = findViewById(R.id.address_singup_btn);
@@ -63,21 +61,21 @@ public class SignUp extends Activity {
         String last_name = lastname.getText().toString();
         String email_ = email.getText().toString();
         String pass_ = pass.getText().toString();
-//        int phone_number  = Integer.valueOf(phonenumber.getText().toString());
-//        int home_number = Integer.valueOf(homenumber.getText().toString());
-//        int cardnum_ = Integer.valueOf(cardnum.getText().toString());
+        String phone_number  = phonenumber.getText().toString();
+        String home_number = homenumber.getText().toString();
+        String cardnum_ = cardnum.getText().toString();
         String address_ = address.getText().toString();
 
-        AddressLocation addressLocation = new AddressLocation();
-        double latitude=addressLocation.location_selected.latitude;
-        double longitude=addressLocation.location_selected.longitude;
+
+        double latitude=Address.location_selected.latitude;
+        double longitude=Address.location_selected.longitude;
 
         if(username_.equals("") || email_.equals("") || pass_.equals("") || latitude ==0 || longitude ==0)
             Alert();
 
         else {
-            db.getDb().execSQL("Insert into users(firstname,lastname,email,number,phonenum,address,cardnum,pass,username,address_num1,address_num2) " +
-                    "values('" + first_name + "','" + last_name + "','" + email_ + "','" + Integer.valueOf(homenumber.getText().toString()) + "','" + Integer.valueOf(phonenumber.getText().toString()) + "','" + address_ + "','" +Integer.valueOf(cardnum.getText().toString())+ "','" + pass_ + "','" + username_ + "','"+latitude+"','"+longitude+"')  ");
+            db.getDb().execSQL("Insert into users(firstname,lastname,email,number,phonenum,address,cardnum,pass,username,address_num1,address_num2,cardinventory) " +
+                    "values('" + first_name + "','" + last_name + "','" + email_ + "','" + home_number + "','" + phone_number + "','" + address_ + "','" +cardnum_+ "','" + pass_ + "','" + username_ + "','"+latitude+"','"+longitude+"','"+1000000+"') ");
             GoToHomePage();
         }
 
@@ -99,7 +97,7 @@ public class SignUp extends Activity {
     }
     public void GoToMap()
     {
-        Intent intent = new Intent(this,AddressLocation.class);
+        Intent intent = new Intent(this,Address.class);
         startActivity(intent);
     }
 
@@ -108,11 +106,5 @@ public class SignUp extends Activity {
         Intent intent = new Intent(this,Login.class);
         startActivity(intent);
     }
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        String
-//
-//    }
 
 }

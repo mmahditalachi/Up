@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ public class Login extends Activity {
 
     public static int list_number;
     private TextView signUp;
+    private final static String TAG = "LoginPage";
     static String username_database,pass_database;
     public static List<Users> u_info;
     public static List<Manager> m_info;
@@ -42,6 +45,7 @@ public class Login extends Activity {
 
     public void SelectManagerData()
     {
+        Log.d(TAG,"Reading from database");
         DatabaseAccess dbAccess = new DatabaseAccess(this);
         m_info = new ArrayList<>();
 
@@ -68,21 +72,21 @@ public class Login extends Activity {
         c.moveToFirst();
         while (!c.isAfterLast()) {
 
+            int cardInventory = c.getInt(12);
             double address_latitude = c.getDouble(11);
             double address_Longitude = c.getDouble(10);
             String username = c.getString(9);
             String pass = c.getString(8);
             int id = c.getInt(7);
-            double cardnum = c.getDouble(6);
+            String cardnum = c.getString(6);
             String address = c.getString(5);
-            double phonenum = c.getDouble(4);
-            double number = c.getInt(3);
+            String phonenum = c.getString(4);
+            String number = c.getString(3);
             String email = c.getString(2);
             String firstname = c.getString(0);
             String lastname = c.getString(1);
 
-
-            Users u = new Users(username,id,firstname,lastname,email,address,pass,number,phonenum,cardnum,address_Longitude,address_latitude);
+            Users u = new Users(username,id,firstname,lastname,email,address,pass,number,phonenum,cardnum,address_Longitude,address_latitude,cardInventory);
             u_info.add(u);
             c.moveToNext();
         }
@@ -179,8 +183,8 @@ public class Login extends Activity {
     }
     public void GoToHomePage()
     {
-//        Intent intent = new Intent(this,HomePage.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this,HomePage.class);
+        startActivity(intent);
     }
 
     public void SignUp()
