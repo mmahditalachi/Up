@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#E0E0E0"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/email-login"
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:layout_above="@id/password-login"
+        android:layout_centerInParent="true"
+        android:layout_x="89dp"
+        android:layout_y="247dp"
+        android:hint="Username"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@color/winered"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <EditText
+        android:id="@+id/password-login"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="88dp"
+        android:backgroundTint="@color/winered"
+        android:layout_y="318dp"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <Button
+        android:id="@+id/login-btn"
+        android:layout_margin="20dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_btn"
+        android:layout_below="@id/password-login"
+        android:text="Login"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/text-singup"
+        android:layout_width="wrap_content"
+        android:paddingRight="60dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/login-btn"
+        android:text="Dont have an account?" />
+
+    <TextView
+        android:id="@+id/singup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:autoLink="all"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/login-btn"
+        android:paddingLeft="150dp"
+         />
+    <TextView
+        android:id="@+id/singup_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textColor="@color/winered"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/login-btn"
+        android:paddingLeft="150dp"
+        android:text="sign up" />
+
+</RelativeLayout>

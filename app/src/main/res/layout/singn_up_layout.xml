@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/first_name_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/winered"
+        android:hint="First name"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/first_name_singup_2"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/first_name_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="First name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:shadowColor="@color/gray"/>
+
+    <TextView
+        android:id="@+id/last_name_signup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Last name"
+        android:textColor="@color/black"
+        android:layout_below="@id/first_name_singup"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:shadowColor="@color/gray"/>
+
+    <EditText
+        android:id="@+id/last_name_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColorHint="@color/gray"
+        android:hint="Last name"
+        android:layout_below="@id/last_name_signup_2"
+        android:backgroundTint="@color/winered"/>
+
+    <EditText
+        android:id="@+id/email_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email address"
+        android:backgroundTint="@color/winered"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/email_singup_2"/>
+
+    <TextView
+        android:id="@+id/email_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Email Address"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_below="@id/last_name_singup"
+        android:shadowColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/password_singup_2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/email_singup"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:shadowColor="@color/gray"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/password_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/winered"
+        android:hint="Password"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/password_singup_2"/>
+
+    <EditText
+        android:id="@+id/phone_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:backgroundTint="@color/winered"
+        android:hint="Phone number"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/phone_singup_2"/>
+
+
+    <TextView
+        android:id="@+id/phone_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Phone number"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_below="@id/password_singup"
+        android:textSize="20sp"
+        android:shadowColor="@color/gray"/>
+
+    <TextView
+        android:id="@+id/home_phone_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Home phone number"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_below="@id/phone_singup"
+        android:shadowColor="@color/gray"/>
+
+    <EditText
+        android:id="@+id/home_phone_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="phone"
+
+        android:backgroundTint="@color/winered"
+        android:hint="Home phone number"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/home_phone_singup_2"/>
+
+    <TextView
+        android:id="@+id/card_number_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Card number"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_below="@id/home_phone_singup"
+        android:textSize="20sp"
+        android:shadowColor="@color/gray"/>
+
+    <EditText
+        android:id="@+id/card_number_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Card number"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/winered"
+        android:layout_below="@id/card_number_singup_2"/>
+
+    <TextView
+        android:id="@+id/address_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Address"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_below="@id/card_number_singup"
+        android:shadowColor="@color/gray"/>
+
+    <EditText
+        android:id="@+id/address_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Address"
+        android:textColorHint="@color/gray"
+        android:layout_below="@id/address_singup_2"
+        android:backgroundTint="@color/winered"/>
+
+    <Button
+        android:id="@+id/address_singup_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Map"
+        android:background="@drawable/rounded_btn"
+        android:layout_below="@id/address_singup"/>
+
+    <Button
+        android:id="@+id/singup_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Sing up"
+        android:background="@color/winered"
+        android:layout_below="@id/username_singup"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/username_singup_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@id/address_singup_btn"
+        android:shadowColor="@color/gray"/>
+
+    <EditText
+        android:id="@+id/username_singup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Username"
+        android:backgroundTint="@color/winered"
+        android:layout_below="@id/username_singup_2"
+        android:textColorHint="@color/gray"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
