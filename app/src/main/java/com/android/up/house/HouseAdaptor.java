@@ -1,6 +1,7 @@
 package com.android.up.house;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.up.ProductHomePage;
 import com.android.up.R;
 import com.bumptech.glide.Glide;
 
@@ -20,6 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> {
 
     Context context;
+    public static int id;
 
     public HouseAdaptor(Context context) {
         this.context = context;
@@ -34,10 +37,18 @@ public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder,final int i) {
         viewHolder.imagetext.setText(HouseMain.house.get(i).getTitle());
         viewHolder.price.setText(String.valueOf(HouseMain.house.get(i).getPrice()));
         Glide.with(context).asBitmap().load(HouseMain.house.get(i).getImage()).into(viewHolder.image);
+
+        viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                id = HouseMain.house.get(i).getId();
+                GoToProdectPage();
+            }
+        });
     }
 
     @Override
@@ -57,5 +68,12 @@ public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> 
             parent_layout = itemView.findViewById(R.id.parent_layout);
             price= itemView.findViewById(R.id.product_price);
         }
+    }
+
+    private void GoToProdectPage()
+    {
+        Intent intent = new Intent(this.context, ProductHomePage.class);
+        context.startActivity(intent);
+
     }
 }

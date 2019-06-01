@@ -37,6 +37,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         navigationView.setCheckedItem(R.id.nav_home);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
+
     }
 
     @Override
