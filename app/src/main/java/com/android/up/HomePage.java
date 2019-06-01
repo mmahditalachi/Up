@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.android.up.house.HouseMain;
+
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawerLayout;
@@ -55,6 +57,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 break;
             case  R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
+                break;
+            case R.id.nav_cart:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HouseMain()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
