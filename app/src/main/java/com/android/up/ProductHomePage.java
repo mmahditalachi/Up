@@ -25,6 +25,7 @@ public class ProductHomePage extends AppCompatActivity {
     private static final String TAG = "ProductHomePage";
     private Button addtocart,send_comment,Show_Comments;
     private ImageView image;
+    public static int price_;
     private EditText comment,quantity;
     private TextView title,detail,price;
     @Override
@@ -126,31 +127,24 @@ public class ProductHomePage extends AppCompatActivity {
         addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    InsertToDatabase();
+                    GoToPayment();
                     GoToHomePage();
             }
         });
     }
 
-    private void GoToHomePage()
+    private void GoToPayment()
     {
-        Intent intent = new Intent(this,HomePage.class);
+        Intent intent = new Intent(this,PaymentPortal.class);
         startActivity(intent);
     }
 
-    private void InsertToDatabase()
+    private void GoToHomePage()
     {
-        DatabaseAccess db = new DatabaseAccess(this);
-        int price = HouseMain.house.get(HouseAdaptor.id-1).getPrice();
-        int id = HouseMain.house.get(HouseAdaptor.id-1).getId();
-        String title = HouseMain.house.get(HouseAdaptor.id-1).getTitle();
-        String username = Login.u_info.get(Login.list_number).getUsername();
-        String firstname = Login.u_info.get(Login.list_number).getFirst_name();
-        String lastname = Login.u_info.get(Login.list_number).getLast_name();
-
-        String sql = "Insert into orders(price,title,id,username,firstname,lastname) Values('"+price+"','"+title+"','"+id+"','"+username+"','"+firstname+"','"+lastname+"')";
-        db.getDb().execSQL(sql);
+        Intent intent = new Intent(this,PaymentPortal.class);
+        startActivity(intent);
     }
+
 
     public void SelectData()
     {
@@ -166,6 +160,7 @@ public class ProductHomePage extends AppCompatActivity {
                         .into(image);
 
                 price.setText(Integer.toString(HouseMain.house.get(i).getPrice()));
+                price_ = HouseMain.house.get(i).getPrice();
                 detail.setText(HouseMain.house.get(i).getDetails());
             }
         }

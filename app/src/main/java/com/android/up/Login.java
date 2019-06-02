@@ -2,6 +2,7 @@ package com.android.up;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -38,7 +39,6 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         SelectManagerData();
-        SelectUsersData();
         LoginBtn();
         SignUp();
     }
@@ -63,10 +63,11 @@ public class Login extends Activity {
             c.moveToNext();
         }
     }
-    public void SelectUsersData()
+    public void SelectUsersData(Context context)
     {
+
         u_info = new ArrayList<>();
-        DatabaseAccess dbAccess = new DatabaseAccess(this);
+        DatabaseAccess dbAccess = new DatabaseAccess(context);
 
         Cursor c = dbAccess.getDb().rawQuery("SELECT * FROM users", null);
         c.moveToFirst();
@@ -97,11 +98,13 @@ public class Login extends Activity {
         username = findViewById(R.id.email_login);
         pass = findViewById(R.id.password_login);
 
+
         login.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
+                SelectUsersData(Login.this);
                 ManagerSearching();
                 UsersSearching();
 
