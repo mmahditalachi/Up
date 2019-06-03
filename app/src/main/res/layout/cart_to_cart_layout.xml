@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+    <TextView
+        android:id="@+id/destination_text_carttocart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_above="@id/destination_cart_number_cart_to_cart"
+        android:text="Destination cart"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:shadowColor="@color/gray"
+        android:layout_marginBottom="10dp"/>
+    <EditText
+        android:id="@+id/destination_cart_number_cart_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="destination cart number"
+        android:backgroundTint="@color/winered"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:layout_marginBottom="40dp"
+/>
+    <TextView
+        android:id="@+id/amount_text_carttocart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="amount"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_below="@id/destination_cart_number_cart_to_cart"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/amount_number_cart_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount_text_carttocart"
+        android:backgroundTint="@color/winered"
+        android:hint="amount number"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:id="@+id/submit_btn_cart_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_btn"
+        android:layout_below="@id/amount_number_cart_to_cart"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="submit"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+
+
+
+
+</RelativeLayout>
