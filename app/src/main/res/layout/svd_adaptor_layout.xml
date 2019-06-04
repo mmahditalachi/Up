@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:id="@+id/relative_news"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_news"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:text="title"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_below="@+id/title_news"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/image_news"
+        android:src="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:layout_margin="15dp"
+        android:id="@+id/image_detail_news"
+        android:layout_width="wrap_content"
+        android:text="canada"
+        android:layout_below="@+id/image_news"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_height="wrap_content" />
+
+    <RatingBar
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/image_detail_news"
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+        android:numStars="10"
+        android:stepSize="0.1"
+        android:isIndicator="false" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:text="Rating"
+        android:layout_below="@+id/image_detail_news"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/rating"
+        android:id="@+id/rating_value"
+        android:textSize="20dp"
+        android:textColor="@color/winered"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/vote_news"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_detail_news"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/border_shape_background"
+        android:text="vote"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+</RelativeLayout>

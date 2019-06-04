@@ -41,7 +41,6 @@ public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> 
         viewHolder.imagetext.setText(HouseMain.house.get(i).getTitle());
         viewHolder.price.setText(String.valueOf(HouseMain.house.get(i).getPrice()));
         Glide.with(context).asBitmap().load(HouseMain.house.get(i).getImage()).into(viewHolder.image);
-
         viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

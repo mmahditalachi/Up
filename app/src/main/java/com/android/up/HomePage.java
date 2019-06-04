@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.android.up.SVD.SVDMain;
 import com.android.up.house.HouseMain;
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -57,7 +58,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                         new Information()).commit();
                 break;
             case  R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SVDMain()).commit();
                 break;
             case R.id.nav_cart:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HouseMain()).commit();
