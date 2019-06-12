@@ -14,16 +14,21 @@ import android.view.MenuItem;
 
 import com.android.up.SVD.SVDMain;
 import com.android.up.house.HouseMain;
+import com.android.up.model.PayObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawerLayout;
+    public static List<PayObject> payList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage_layout);
-
+        payList = new ArrayList<>();
         drawerLayout = findViewById(R.id.drawer_layout);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -58,7 +63,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                         new Information()).commit();
                 break;
             case  R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SVDMain()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
                 break;
             case R.id.nav_cart:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HouseMain()).commit();
