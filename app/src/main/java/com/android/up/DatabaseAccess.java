@@ -7,7 +7,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DatabaseAccess extends SQLiteAssetHelper {
 
-    private static String DATABASE_NAME = "Up06.db";
+    private static String DATABASE_NAME = "Up08.db";
     private static int DATABASE_VERSION = 1;
     SQLiteDatabase db;
 

@@ -30,7 +30,6 @@ import java.util.stream.Collectors;
 public class SVDAdaptor extends RecyclerView.Adapter<SVDAdaptor.ViewHolder> {
 
     Context context;
-    public static List<Rating> rating;
 
     public SVDAdaptor(Context context) {
         this.context = context;
@@ -47,7 +46,7 @@ public class SVDAdaptor extends RecyclerView.Adapter<SVDAdaptor.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder,final int i) {
-
+        InsertInToRatingEveryNewsRating(i);
         viewHolder.title .setText(SVDMain.news.get(i).getTitle());;
         viewHolder.details.setText(SVDMain.news.get(i).getDetails());
         viewHolder.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -70,6 +69,38 @@ public class SVDAdaptor extends RecyclerView.Adapter<SVDAdaptor.ViewHolder> {
 
         Glide.with(context).asBitmap().load(SVDMain.news.get(i).getImage()).into(viewHolder.image);
 
+    }
+    private List NameOfEveryUser(){
+        List<String> name = new ArrayList<>();
+        for (int i = 0; i < SVDMain.rating.size(); i++) {
+            name.add(SVDMain.rating.get(i).getUsername());
+        }
+        return name;
+    }
+    private boolean SearchingUser(){
+        List<String>name = new ArrayList<>();
+        name = NameOfEveryUser();
+        boolean check = false;
+        for (int i = 0; i < name.size(); i++) {
+            if(name.get(i).equals(Login.u_info.get(Login.list_number).getUsername()))
+                check =  true;
+        }
+        return check;
+    }
+
+    private void InsertInToRatingEveryNewsRating(int i)
+    {
+        DatabaseAccess db = new DatabaseAccess(this.context);
+        String username = Login.u_info.get(Login.list_number).getUsername();
+        int zero =0;
+        boolean check = SearchingUser();
+        if(check==false) {
+            for (int j = 0; j < SVDMain.news.size(); j++) {
+                int id = SVDMain.news.get(i).getId();
+                String sql = "Insert into rating(username,id,rating) values('" + username + "','" + id + "','" + zero + "')";
+                db.getDb().execSQL(sql);
+            }
+        }
     }
 
     public void Alert(String message,String title)
