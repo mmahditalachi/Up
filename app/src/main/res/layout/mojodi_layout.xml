@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <TextView
+       android:id="@+id/cart_number_label_mojodi"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:textSize="20sp"
+       android:text="cart number:"
+       android:layout_alignParentTop="true"
+       android:layout_marginTop="200dp"
+       />
+    <EditText
+        android:id="@+id/cart_number_txt_mojodi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_number_label_mojodi"
+        android:backgroundTint="@color/winered"
+        android:hint="cart number"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/password_label_mojodi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="password:"
+        android:layout_below="@id/cart_number_txt_mojodi"
+        android:layout_marginTop="50dp"
+        />
+    <EditText
+        android:id="@+id/password_txt_mojodi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/winered"
+        android:textColor="@color/black"
+        android:hint="password"
+        android:layout_below="@id/password_label_mojodi"/>
+    <Button
+        android:id="@+id/count_btn_mojodi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="count!!"
+        android:background="@drawable/rounded_btn"
+        android:layout_below="@id/password_txt_mojodi"
+        android:layout_marginTop="150dp"/>
+</RelativeLayout>
