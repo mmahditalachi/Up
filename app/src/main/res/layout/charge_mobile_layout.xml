@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/mobile_number_label_mobile_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="mobile number:"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"/>
+    <EditText
+        android:id="@+id/mobile_number_txt_mobile_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/winered"
+        android:textColor="@color/black"
+        android:hint="mobile number"
+        android:layout_below="@id/mobile_number_label_mobile_charge"/>
+    <TextView
+        android:id="@+id/price_txt_mobile_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="@color/winered"
+        android:textStyle="bold"
+        android:text="'price'"
+        android:gravity="center"
+        android:layout_below="@id/mobile_number_txt_mobile_charge"
+        android:layout_marginTop="100dp"/>
+    <Button
+        android:id="@+id/count_btn_mobile_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_btn"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="count"
+        android:layout_below="@id/price_txt_mobile_charge"
+        android:layout_marginTop="80dp"/>
+    <Button
+        android:id="@+id/pay_btn_mobile_charge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_btn"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="pay!!"
+        android:layout_below="@id/count_btn_mobile_charge"
+        android:layout_marginTop="100dp" />
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
