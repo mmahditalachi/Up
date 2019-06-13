@@ -47,6 +47,7 @@
         android:hint="Account number"
         android:layout_below="@+id/account_number_label_nikokari"/>
     <Button
+        android:id="@+id/submit_btn_nikokari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_btn"
