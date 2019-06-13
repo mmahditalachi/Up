@@ -39,9 +39,9 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
         numberET = view .findViewById(R.id.bill_number_txt_paybill);
         pay = view.findViewById(R.id.pay_btn_paybill);
         priceTV = view.findViewById(R.id.bill_price_txt_paybill);
-        show = view.findViewById(R)
+        show = view.findViewById(R.id.show_price_btn_paybill);
         CreateSpinner();
-        if(!item.equals("") && !numberET.equals("") &&  !priceTV.equals("")) {
+        if(!numberET.equals("") &&  !priceTV.equals("")) {
             pay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -51,8 +51,17 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
                 }
             });
         }
-
-
+        if(!numberET.equals(""))
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SelectDataFromDatabase();
+            }
+        });
+        else{
+            Pay p = new Pay();
+            p.Alert("Enter your bill number","Incorrect information",this.getActivity());
+        }
         return view;
     }
     private void GoToPaymentPortal(){
@@ -78,20 +87,16 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
         String sql = "Select * from Bills";
         Cursor c = db.getDb().rawQuery(sql,null);
         c.moveToFirst();
-        if(!item.equals("")) {
             while (!c.isAfterLast()) {
                 String title = c.getString(3);
                 int id = c.getInt(2);
                 int price = c.getInt(0);
                 String number = c.getString(1);
-                if (numberET.getText().toString().equals(number) && item.equals(title)){
+                if (numberET.getText().toString().equals(number)){
                      bo = new BillObject(price,number,id,title);
+                     priceTV.setText(String.valueOf(bo.getPrice()));
                 }
                 c.moveToNext();
-            }
-        }else{
-            Pay p = new Pay();
-            p.Alert("select categories","Error",this.getActivity());
         }
     }
 

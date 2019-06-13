@@ -15,8 +15,8 @@
         android:id="@+id/bill_number_label_paybill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="bill number:"
-        android:textColor="@color/black"
+        android:text="bill Number:"
+        android:textColor="@color/winered"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_below="@id/bill_combobox_paybill"
@@ -36,7 +36,7 @@
         android:textStyle="bold"
         android:textColor="@color/winered"
         android:layout_below="@id/bill_number_txt_paybill"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:text="'price'"
         android:gravity="center"/>
     <Button
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_btn"
         android:layout_below="@id/bill_price_txt_paybill"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:text="show price"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -56,9 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/show_price_btn_paybill"
         android:background="@drawable/rounded_btn"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="pay!!!"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>
