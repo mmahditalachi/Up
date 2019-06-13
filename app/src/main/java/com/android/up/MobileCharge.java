@@ -76,6 +76,7 @@ public class MobileCharge extends Fragment {
                 @Override
                 public void onClick(View v) {
                     HomePage.payList.add(payObject);
+                    UpdateDatabase();
                     GoToPayment();
                 }
             });
@@ -95,5 +96,12 @@ public class MobileCharge extends Fragment {
             }
         });
         alertDialog1.show();
+    }
+
+    private void UpdateDatabase(){
+        DatabaseAccess db = new DatabaseAccess(this.getActivity());
+        int zero =0;
+        String sql ="Update mobilebill set price = '"+zero+"' where number ='"+mobile_number.getText().toString()+"'";
+        db.getDb().execSQL(sql);
     }
 }

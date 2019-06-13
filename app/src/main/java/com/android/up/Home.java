@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.android.up.SVD.SVDMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge;
+    private Button news,mobilecharge,payBill;
 
 
 
@@ -23,8 +23,10 @@ public class Home extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.main_layout,container,false);
         news = view.findViewById(R.id.news_btn_main);
         mobilecharge = view.findViewById(R.id.chargemobile_btn_main);
+        payBill = view.findViewById(R.id.paybill_btn_main);
         news.setOnClickListener(this);
         mobilecharge.setOnClickListener(this);
+        payBill.setOnClickListener(this);
         return view;
     }
 
@@ -39,6 +41,10 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.chargemobile_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MobileCharge()).commit();
+                break;
+            case R.id.paybill_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Bill()).commit();
                 break;
         }
     }
