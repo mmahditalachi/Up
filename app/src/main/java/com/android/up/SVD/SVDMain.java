@@ -10,19 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.android.up.DatabaseAccess;
 import com.android.up.Login;
 import com.android.up.R;
 import com.android.up.model.News;
 import com.android.up.model.Rating;
 import com.android.up.model.Sort;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import Jama.Matrix;
 import Jama.SingularValueDecomposition;
 
@@ -42,13 +37,27 @@ public class SVDMain extends Fragment {
         View view  = inflater.inflate(R.layout.svd_main_layout,container,false);
         SelectFromDatabase();
         SelectRatingFromDatabase();
-        InsertToMatrix();
+        boolean check = UserExits();
+
+        if(check){
+        InsertToMatrix();}
+
         recyclerView = view.findViewById(R.id.recycle_view_news);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         adaptor = new SVDAdaptor(this.getActivity());
         recyclerView.setAdapter(adaptor);
         return view;
+    }
+
+    private boolean UserExits(){
+        boolean check = false;
+        for (int i = 0; i < rating.size(); i++) {
+            if (Login.u_info.get(Login.list_number).getUsername().equals(rating.get(i).getUsername())){
+                check = true;
+            }
+        }
+        return check;
     }
 
 
@@ -188,7 +197,6 @@ public class SVDMain extends Fragment {
                 }
             }
         }
-        System.out.println(2+2);
     }
 
 

@@ -5,13 +5,35 @@
 android:background="@drawable/gradient_background"
     >
     <TextView
+        android:id="@+id/src_text_carttocart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_above="@id/src_number_cart_to_cart"
+        android:text="Origin card"
+        android:textColor="@color/winered"
+        android:textStyle="bold"
+        android:shadowColor="@color/gray"
+        android:layout_marginBottom="10dp"/>
+    <EditText
+        android:id="@+id/src_number_cart_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="destination cart number"
+        android:layout_above="@+id/destination_text_carttocart"
+        android:backgroundTint="@color/winered"
+        android:textColor="@color/black"
+        android:layout_marginBottom="40dp"
+        />
+
+    <TextView
         android:id="@+id/destination_text_carttocart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:layout_above="@id/destination_cart_number_cart_to_cart"
-        android:text="Destination cart"
-        android:textColor="@color/black"
+        android:text="Destination card"
+        android:textColor="@color/winered"
         android:textStyle="bold"
         android:shadowColor="@color/gray"
         android:layout_marginBottom="10dp"/>
@@ -30,8 +52,8 @@ android:background="@drawable/gradient_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="amount"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textColor="@color/winered"
         android:textStyle="bold"
         android:layout_below="@id/destination_cart_number_cart_to_cart"
         android:layout_marginBottom="10dp"/>

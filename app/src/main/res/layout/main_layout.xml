@@ -43,35 +43,35 @@
         android:id="@+id/line2_btns_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="20dp">
 
         <Button
             android:id="@+id/carttocart_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="cart to cart"
-            android:background="@drawable/circle_btn"
             android:layout_marginLeft="8dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/circle_btn"
+            android:shadowColor="@color/gray"
+            android:text="cart to cart" />
 
         <Button
             android:id="@+id/paybill_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="pay bills"
-            android:background="@drawable/circle_btn"
             android:layout_marginLeft="50dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/circle_btn"
+            android:shadowColor="@color/gray"
+            android:text="pay bills" />
 
         <Button
             android:id="@+id/credit_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="credit"
-            android:background="@drawable/circle_btn"
             android:layout_marginLeft="50dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/circle_btn"
+            android:shadowColor="@color/gray"
+            android:text="credit" />
 
     </LinearLayout>
     <LinearLayout
