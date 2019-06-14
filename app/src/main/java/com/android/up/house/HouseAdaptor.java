@@ -83,6 +83,5 @@ public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> 
     {
         Intent intent = new Intent(this.context, ProductHomePage.class);
         context.startActivity(intent);
-
     }
 }

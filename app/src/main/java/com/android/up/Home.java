@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.up.SVD.SVDMain;
+import com.android.up.concert.ConcertMain;
 import com.android.up.gardesh.GardeshMain;
 import com.android.up.house.HouseMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity,gardesh,map,ticket;
+    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity,gardesh,map,ticket,concert;
 
     @Nullable
     @Override
@@ -29,9 +30,11 @@ public class Home extends Fragment implements View.OnClickListener {
         Wallet = view.findViewById(R.id.credit_btn_main);
         housedeal =view.findViewById(R.id.buy_property_btn_main);
         charity = view.findViewById(R.id.charitable_btn_main);
+        concert = view.findViewById(R.id.concert_reservation);
         ticket = view.findViewById(R.id.buy_plane_ticket_btn_main);
         map = view.findViewById(R.id.map_btn_main);
         ticket.setOnClickListener(this);
+        concert.setOnClickListener(this);
         charity.setOnClickListener(this);
         map.setOnClickListener(this);
         news.setOnClickListener(this);
@@ -86,6 +89,10 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.buy_plane_ticket_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Tiket()).commit();
+                break;
+            case R.id.concert_reservation:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ConcertMain()).commit();
                 break;
         }
     }

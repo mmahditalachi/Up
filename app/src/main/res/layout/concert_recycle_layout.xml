@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/layout_2"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/concert_title"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_below="@+id/concert_title"
+        android:background="@drawable/red_border_whiteback"
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_weight="1"
+        android:id="@+id/concert_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/details_concert"
+        android:layout_weight="1"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:background="@drawable/red_border_whiteback"
+        android:id="@+id/prce_concert"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layout_1"
+        android:text="price"
+        android:padding="5dp"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

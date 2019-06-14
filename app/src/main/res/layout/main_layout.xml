@@ -12,35 +12,75 @@
     <LinearLayout
         android:id="@+id/line1_btns_main"
         android:layout_width="match_parent"
+        android:weightSum="3"
         android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
      >
         <Button
+            android:layout_weight="1"
             android:id="@+id/chargemobile_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="mobile billl"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="8dp"
+            android:background="@drawable/mobilebill"
             android:shadowColor="@color/gray"/>
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/charitable_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="charitable"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="50dp"
+            android:background="@drawable/charity"
             android:shadowColor="@color/gray"/>
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/map_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="map"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="50dp"
+            android:background="@drawable/map"
             android:shadowColor="@color/gray"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line1_btns_main_1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_below="@+id/line1_btns_main"
+        >
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/charitable_btn_main_1"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Mobile Bill" />
+
+        <TextView
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:id="@+id/chargemobile_btn_main_1"
+            android:layout_width="match_parent"
+            android:text="Charity"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:id="@+id/map_btn_main_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="map"
+            />
 
     </LinearLayout>
 
@@ -48,71 +88,151 @@
         android:id="@+id/line2_btns_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/line1_btns_main"
+        android:weightSum="3"
+        android:layout_below="@+id/line1_btns_main_1"
         android:layout_marginTop="20dp">
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/carttocart_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/circle_btn"
-            android:shadowColor="@color/gray"
-            android:text="cart to cart" />
+            android:background="@drawable/cardtocard"
+            />
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/paybill_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="50dp"
-            android:background="@drawable/circle_btn"
-            android:shadowColor="@color/gray"
-            android:text="pay bills" />
+            android:background="@drawable/mobilebill"
+             />
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/credit_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="50dp"
-            android:background="@drawable/circle_btn"
-            android:shadowColor="@color/gray"
-            android:text="Wallet" />
+            android:background="@drawable/wallet"
+             />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line1_btns_main_2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_below="@+id/line2_btns_main"
+        >
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/charitable_btn_main_2"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Card to card" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/chargemobile_btn_main_2"
+            android:layout_width="match_parent"
+            android:text="Bills"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:id="@+id/map_btn_main_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="inventory"
+            />
 
     </LinearLayout>
     <LinearLayout
         android:id="@+id/line3_btns_main"
+        android:weightSum="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/line2_btns_main"
         android:layout_marginTop="20dp">
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/buy_plane_ticket_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="plane ticket"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="8dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/ticket"
+            />
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/buy_property_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="property"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="50dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/home"
+            />
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/account_activities_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="bank account"
             android:textSize="13sp"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="50dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/bank"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line1_btns_main_3"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_below="@+id/line3_btns_main"
+        >
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/charitable_btn_main_3"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Ticket" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/chargemobile_btn_main_3"
+            android:layout_width="match_parent"
+            android:text="House dealing"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:id="@+id/map_btn_main_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="account"
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -120,28 +240,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/line3_btns_main"
+        android:weightSum="3"
         android:layout_marginTop="20dp"
-
         android:gravity="center">
 
         <Button
-            android:layout_marginright="20dp"
+            android:layout_weight="1"
             android:id="@+id/news_btn_main"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="news"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="8dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/ic_bluetooth_audio_black_24dp"
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            />
         <Button
+            android:layout_weight="1"
             android:id="@+id/concert_reservation"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="news"
-            android:background="@drawable/circle_btn"
-            android:layout_marginLeft="8dp"
-            android:shadowColor="@color/gray"/>
+            android:background="@drawable/ic_queue_music_black_24dp"
+            />
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line1_btns_main_4"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_below="@+id/line4_btns_main"
+        >
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/charitable_btn_main_4"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="News" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/chargemobile_btn_main_4"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:id="@+id/map_btn_main_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concert reservation"
+            />
 
     </LinearLayout>
 
