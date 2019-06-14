@@ -14,16 +14,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.up.SVD.SVDMain;
+import com.android.up.gardesh.GardeshMain;
 import com.android.up.house.HouseMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity;
+    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity,gardesh;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_layout,container,false);
         news = view.findViewById(R.id.news_btn_main);
+        gardesh = view.findViewById(R.id.account_activities_btn_main);
         mobilecharge = view.findViewById(R.id.chargemobile_btn_main);
         payBill = view.findViewById(R.id.paybill_btn_main);
         CardToCard = view.findViewById(R.id.carttocart_btn_main);
@@ -32,6 +34,7 @@ public class Home extends Fragment implements View.OnClickListener {
         charity = view.findViewById(R.id.charitable_btn_main);
         charity.setOnClickListener(this);
         news.setOnClickListener(this);
+        gardesh.setOnClickListener(this);
         housedeal.setOnClickListener(this);
         mobilecharge.setOnClickListener(this);
         payBill.setOnClickListener(this);
@@ -70,6 +73,10 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.charitable_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Charity()).commit();
+                break;
+            case R.id.account_activities_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new GardeshMain()).commit();
                 break;
         }
     }

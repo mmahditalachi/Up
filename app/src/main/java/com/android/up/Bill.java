@@ -36,7 +36,7 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
         View view = inflater.inflate(R.layout.pay_bill_layout,container,false);
         destination = new ArrayList<>();
         spinner = view.findViewById(R.id.bill_combobox_paybill);
-        numberET = view .findViewById(R.id.bill_number_txt_paybill);
+        numberET = view.findViewById(R.id.bill_number_txt_paybill);
         pay = view.findViewById(R.id.pay_btn_paybill);
         priceTV = view.findViewById(R.id.bill_price_txt_paybill);
         show = view.findViewById(R.id.show_price_btn_paybill);

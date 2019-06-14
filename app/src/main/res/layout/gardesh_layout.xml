@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
-<LinearLayout
+    >
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/red_border"
+        android:layout_height="wrap_content">
+    <LinearLayout
+    android:weightSum="2"
+    android:padding="5dp"
+    android:background="@drawable/red_border"
     android:id="@+id/title_linear_line_gardesh"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/skyblue">
+    >
     <TextView
+        android:layout_weight="1"
         android:id="@+id/title_label_gardesh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +26,7 @@
         android:textStyle="bold"
         android:textColor="@color/black" />
     <TextView
+        android:layout_weight="1"
         android:id="@+id/title_txt_gardesh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,53 +38,54 @@
         android:id="@+id/amount_txt_gardesh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="'amount'"
+        android:text=""
         android:textSize="50sp"
         android:textColor="@color/winered"
         android:textStyle="bold"
         android:gravity="center" android:layout_below="@id/title_linear_line_gardesh"/>
     <LinearLayout
+        android:padding="5dp"
         android:id="@+id/fromto_linear_line_gardesh"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        android:background="@drawable/red_border"
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:layout_below="@id/amount_txt_gardesh">
         <TextView
+            android:layout_weight="1"
             android:id="@+id/from_label_gardesh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="from:"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="20dp"
             />
         <TextView
+            android:layout_weight="1"
             android:id="@+id/from_txt_gardesh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="'mamad'"
-            android:textSize="30sp"
+            android:textSize="20dp"
             android:textColor="@color/winered"/>
         <TextView
+            android:layout_weight="1"
             android:id="@+id/to_label_gardesh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:text="to:" />
         <TextView
+            android:layout_weight="1"
             android:id="@+id/to_txt_gardesh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="'mamad'"
-            android:textSize="30sp"
+            android:textSize="20dp"
             android:textColor="@color/winered"
-
             />
-
-
-
-
     </LinearLayout>
-
+    </RelativeLayout>
 </RelativeLayout>
