@@ -17,7 +17,7 @@ import com.android.up.SVD.SVDMain;
 import com.android.up.house.HouseMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal;
+    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity;
 
     @Nullable
     @Override
@@ -29,6 +29,8 @@ public class Home extends Fragment implements View.OnClickListener {
         CardToCard = view.findViewById(R.id.carttocart_btn_main);
         Wallet = view.findViewById(R.id.credit_btn_main);
         housedeal =view.findViewById(R.id.buy_property_btn_main);
+        charity = view.findViewById(R.id.charitable_btn_main);
+        charity.setOnClickListener(this);
         news.setOnClickListener(this);
         housedeal.setOnClickListener(this);
         mobilecharge.setOnClickListener(this);
@@ -64,6 +66,10 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.buy_property_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HouseMain()).commit();
+                break;
+            case R.id.charitable_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Charity()).commit();
                 break;
         }
     }

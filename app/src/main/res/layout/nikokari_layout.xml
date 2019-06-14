@@ -2,23 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
+    <TextView
+        android:id="@+id/spinner_label_nikokari"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/winered"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text="What do want to help ?"
+        android:layout_marginTop="20dp"
+        />
 <Spinner
     android:id="@+id/nikokari_spinner_nikokari"
+    android:layout_below="@+id/spinner_label_nikokari"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/winered"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="10dp"
     />
     <TextView
         android:id="@+id/amount_label_nikokari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textColor="@color/winered"
+        android:textSize="25dp"
         android:textStyle="bold"
-        android:text="amount:"
-        android:layout_marginTop="50dp"
+        android:text="Amount:"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/nikokari_spinner_nikokari"/>
     <EditText
         android:id="@+id/amount_txt_nikokari"
@@ -28,36 +39,18 @@
         android:textColor="@color/black"
         android:hint="number of amount"
         android:layout_below="@id/amount_label_nikokari"/>
-    <TextView
-        android:id="@+id/account_number_label_nikokari"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="account number:"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/amount_txt_nikokari"/>
-    <EditText
-        android:id="@+id/account_number_txt_nikokari"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/winered"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:hint="Account number"
-        android:layout_below="@+id/account_number_label_nikokari"/>
+
     <Button
         android:id="@+id/submit_btn_nikokari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_btn"
-        android:layout_below="@+id/account_number_txt_nikokari"
+        android:background="@drawable/border_shape_background"
+        android:layout_below="@+id/amount_txt_nikokari"
         android:text="do it !!"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="20dp"
         />
 
 
