@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+<LinearLayout
+    android:id="@+id/title_linear_line_gardesh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/skyblue">
+    <TextView
+        android:id="@+id/title_label_gardesh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title:"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/title_txt_gardesh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="'title'"
+        android:textColor="@color/winered"
+        android:textSize="30sp" />
+</LinearLayout>
+    <TextView
+        android:id="@+id/amount_txt_gardesh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="'amount'"
+        android:textSize="50sp"
+        android:textColor="@color/winered"
+        android:textStyle="bold"
+        android:gravity="center" android:layout_below="@id/title_linear_line_gardesh"/>
+    <LinearLayout
+        android:id="@+id/fromto_linear_line_gardesh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount_txt_gardesh">
+        <TextView
+            android:id="@+id/from_label_gardesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="from:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            />
+        <TextView
+            android:id="@+id/from_txt_gardesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'mamad'"
+            android:textSize="30sp"
+            android:textColor="@color/winered"/>
+        <TextView
+            android:id="@+id/to_label_gardesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="to:" />
+        <TextView
+            android:id="@+id/to_txt_gardesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'mamad'"
+            android:textSize="30sp"
+            android:textColor="@color/winered"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
