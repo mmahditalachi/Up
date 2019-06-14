@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/photo_delivery"
-        android:layout_width="1920px"
-        android:layout_height="1100px"
+        android:layout_width="match_parent"
+        android:layout_height="850px"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/rocket" />

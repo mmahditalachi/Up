@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +19,7 @@ import com.android.up.model.PayObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Charity extends Fragment implements AdapterView.OnItemSelectedListener{
+public class Charity extends Fragment{
 
     private Button pay;
     private List<String> list;
@@ -43,7 +42,7 @@ public class Charity extends Fragment implements AdapterView.OnItemSelectedListe
             @Override
             public void onClick(View v) {
                 if(!amount.getText().toString().equals("")) {
-                    PayObject po = new PayObject(zero, Integer.parseInt(amount.getText().toString()), helps);
+                    PayObject po = new PayObject(zero, Integer.parseInt(amount.getText().toString()), spinner.getSelectedItem().toString());
                     HomePage.payList.add(po);
                     GoToPaymentPortal();
                 }else {
@@ -66,15 +65,5 @@ public class Charity extends Fragment implements AdapterView.OnItemSelectedListe
     private void GoToPaymentPortal(){
         Intent intent = new Intent(this.getActivity(),PaymentPortal.class);
         startActivity(intent);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        helps = parent.getItemAtPosition(position).toString();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

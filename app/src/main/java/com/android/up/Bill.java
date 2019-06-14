@@ -22,7 +22,7 @@ import com.android.up.model.PayObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bill extends Fragment implements AdapterView.OnItemSelectedListener {
+public class Bill extends Fragment {
     private Spinner spinner;
     private EditText numberET;
     private List<String> destination;
@@ -45,7 +45,7 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
             pay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    PayObject p = new PayObject(bo.getId(), bo.getPrice(), item);
+                    PayObject p = new PayObject(bo.getId(), bo.getPrice(), spinner.getSelectedItem().toString());
                     HomePage.payList.add(p);
                     GoToPaymentPortal();
                 }
@@ -78,10 +78,7 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
         spinner.setAdapter(adapter);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        item = parent.getItemAtPosition(position).toString();
-    }
+
     private void SelectDataFromDatabase(){
         DatabaseAccess db = new DatabaseAccess(this.getActivity());
         String sql = "Select * from Bills";
@@ -98,10 +95,5 @@ public class Bill extends Fragment implements AdapterView.OnItemSelectedListener
                 }
                 c.moveToNext();
         }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

@@ -1,13 +1,10 @@
 package com.android.up;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +15,7 @@ import com.android.up.gardesh.GardeshMain;
 import com.android.up.house.HouseMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity,gardesh;
+    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal,charity,gardesh,map,ticket;
 
     @Nullable
     @Override
@@ -32,7 +29,11 @@ public class Home extends Fragment implements View.OnClickListener {
         Wallet = view.findViewById(R.id.credit_btn_main);
         housedeal =view.findViewById(R.id.buy_property_btn_main);
         charity = view.findViewById(R.id.charitable_btn_main);
+        ticket = view.findViewById(R.id.buy_plane_ticket_btn_main);
+        map = view.findViewById(R.id.map_btn_main);
+        ticket.setOnClickListener(this);
         charity.setOnClickListener(this);
+        map.setOnClickListener(this);
         news.setOnClickListener(this);
         gardesh.setOnClickListener(this);
         housedeal.setOnClickListener(this);
@@ -77,6 +78,14 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.account_activities_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new GardeshMain()).commit();
+                break;
+            case R.id.map_btn_main:
+                Intent intent = new Intent(this.getActivity(), MapsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.buy_plane_ticket_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Tiket()).commit();
                 break;
         }
     }
