@@ -4,7 +4,7 @@
     android:background="@drawable/gradient_background">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/white"
+
         android:layout_height="wrap_content">
     <TextView
         android:id="@+id/mobile_number_label_mobile_charge"
@@ -32,7 +32,6 @@
         android:textSize="40sp"
         android:textColor="@color/winered"
         android:textStyle="bold"
-        android:text="'price'"
         android:gravity="center"
         android:layout_below="@id/mobile_number_txt_mobile_charge"
         android:layout_marginTop="20dp"/>

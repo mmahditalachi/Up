@@ -2,14 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/line1_btns_main"
         android:layout_width="match_parent"
-        android:layout_above="@+id/line2_btns_main"
+        android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
      >
-
         <Button
             android:id="@+id/chargemobile_btn_main"
             android:layout_width="100dp"
@@ -43,7 +48,7 @@
         android:id="@+id/line2_btns_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/line1_btns_main"
         android:layout_marginTop="20dp">
 
         <Button
@@ -71,7 +76,7 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/circle_btn"
             android:shadowColor="@color/gray"
-            android:text="credit" />
+            android:text="Wallet" />
 
     </LinearLayout>
     <LinearLayout
@@ -130,6 +135,6 @@
 
     </LinearLayout>
 
-
-
+</RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

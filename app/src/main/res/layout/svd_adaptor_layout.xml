@@ -4,7 +4,7 @@
     android:layout_margin="10dp"
     android:id="@+id/relative_news"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/title_news"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_detail_news"
         android:layout_alignParentRight="true"
-        android:background="@drawable/border_shape_background"
+        android:background="@drawable/black_border"
         android:text="vote"
         android:textColor="@color/white"
         android:textSize="20dp" />

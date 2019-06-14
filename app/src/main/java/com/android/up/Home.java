@@ -1,5 +1,8 @@
 package com.android.up;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,11 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.up.SVD.SVDMain;
+import com.android.up.house.HouseMain;
 
 public class Home extends Fragment implements View.OnClickListener {
-    private Button news,mobilecharge,payBill,CardToCard;
-
-
+    private Button news,mobilecharge,payBill,CardToCard,Wallet,housedeal;
 
     @Nullable
     @Override
@@ -25,17 +27,16 @@ public class Home extends Fragment implements View.OnClickListener {
         mobilecharge = view.findViewById(R.id.chargemobile_btn_main);
         payBill = view.findViewById(R.id.paybill_btn_main);
         CardToCard = view.findViewById(R.id.carttocart_btn_main);
+        Wallet = view.findViewById(R.id.credit_btn_main);
+        housedeal =view.findViewById(R.id.buy_property_btn_main);
         news.setOnClickListener(this);
+        housedeal.setOnClickListener(this);
         mobilecharge.setOnClickListener(this);
         payBill.setOnClickListener(this);
         CardToCard.setOnClickListener(this);
+        Wallet.setOnClickListener(this);
         return view;
     }
-
-    private void Inventory(){
-
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -55,6 +56,15 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.carttocart_btn_main:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CartToCart()).commit();
+                break;
+            case R.id.credit_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Inventory()).commit();
+                break;
+            case R.id.buy_property_btn_main:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HouseMain()).commit();
+                break;
         }
     }
 }

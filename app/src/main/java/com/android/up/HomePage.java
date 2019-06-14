@@ -65,9 +65,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             case  R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
                 break;
-            case R.id.nav_cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HouseMain()).commit();
-                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
