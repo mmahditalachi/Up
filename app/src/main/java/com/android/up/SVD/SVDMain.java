@@ -137,33 +137,38 @@ public class SVDMain extends Fragment {
         double[] matrixRowSum =  SearchingCloseRang(rating_,news.size(),Login.u_info.size(),sort);
         List<Integer> distance = new ArrayList<>();
         for (int i = 0; i < matrixRowSum.length; i++) {
-        if(matrixRowSum[i]<Math.sqrt(18) && matrixRowSum[i]!=0){
+        if(matrixRowSum[i]<Math.sqrt(30) && matrixRowSum[i]!=0){
                 distance.add(i);
             }
         }
-        double[][] finaluser = new double[distance.size()][news.size()];
-        for (int i = 0; i < distance.size(); i++) {
-            for (int j = 0; j < news.size(); j++) {
-                finaluser[i][j] = rating_[distance.get(i)][j];
-            }
-        }
+        if (distance.size()==0){
+            return;
+        }else {
 
-        double[][] user_i = new double[news.size()][1];
-        for (int i = 0; i < news.size(); i++) {
-            for (int j = 0; j < 1; j++) {
-                user_i[i][j] = user.get(i).getRating();
+            double[][] finaluser = new double[distance.size()][news.size()];
+            for (int i = 0; i < distance.size(); i++) {
+                for (int j = 0; j < news.size(); j++) {
+                    finaluser[i][j] = rating_[distance.get(i)][j];
+                }
             }
-        }
-        Matrix User = new Matrix(user_i);
-        Matrix A = new Matrix(finaluser);
-        SingularValueDecomposition svd = A.svd();
-        Matrix U = svd.getV();
-        Matrix UT = U.transpose();
-        Matrix Mul = UT.times(U);
-        System.out.println(Mul);
-        Matrix result = Mul.times(User);
-        Sorting(result.transpose());
 
+            double[][] user_i = new double[news.size()][1];
+            for (int i = 0; i < news.size(); i++) {
+                for (int j = 0; j < 1; j++) {
+                    user_i[i][j] = user.get(i).getRating();
+                }
+            }
+            System.out.println();
+            Matrix User = new Matrix(user_i);
+            Matrix A = new Matrix(finaluser);
+            SingularValueDecomposition svd = A.svd();
+            Matrix U = svd.getV();
+            Matrix UT = U.transpose();
+            Matrix Mul = UT.times(U);
+            System.out.println(Mul);
+            Matrix result = Mul.times(User);
+            Sorting(result.transpose());
+        }
     }
     private void Sorting(Matrix result){
         double[][] matrix =result.getArrayCopy();

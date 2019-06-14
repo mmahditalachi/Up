@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.up.concert.ConcertAdaptor;
 import com.android.up.model.PayObject;
 
 import java.util.ArrayList;
@@ -54,6 +55,12 @@ public class PaymentPortal extends Activity {
                     String cardNum = card_num1.getText().toString() + card_num2.getText().toString() + card_num3.getText().toString() + card_num4.getText().toString();
                     if (cardNum.equals(Login.u_info.get(Login.list_number).getCardnum()) && password.getText().toString().equals(Login.u_info.get(Login.list_number).getPass())) {
                         Pay pay = new Pay();
+                        if(ConcertAdaptor.razie ==5){
+                            DeleteConcertTicket();
+                        }
+                        if (ProductHomePage.razie==5){
+                            DeleteHouse();
+                        }
                         pay.Pay(PaymentPortal.this,price,title,id);
                         Login login = new Login();
                         login.SelectUsersData(PaymentPortal.this);
@@ -86,4 +93,16 @@ public class PaymentPortal extends Activity {
         Intent intent = new Intent(this,HomePage.class);
         startActivity(intent);
     }
+    private void DeleteConcertTicket(){
+        DatabaseAccess db = new DatabaseAccess(this);
+        String sql = "Delete from concert where id = '"+HomePage.payList.get(HomePage.payList.size()-1).getId()+"'";
+        db.getDb().execSQL(sql);
+    }
+    private void DeleteHouse(){
+        DatabaseAccess db = new DatabaseAccess(this);
+        String sql = "Delete from house where id = '"+HomePage.payList.get(HomePage.payList.size()-1).getId()+"'";
+        db.getDb().execSQL(sql);
+    }
+
+
 }

@@ -28,6 +28,7 @@ public class ProductHomePage extends AppCompatActivity {
     public static int price_;
     private EditText comment,quantity;
     private TextView title,detail,price;
+    public static int razie=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +128,7 @@ public class ProductHomePage extends AppCompatActivity {
         addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    razie=5;
                     GoToPayment();
                     GoToHomePage();
             }

@@ -47,15 +47,16 @@ public class HouseAdaptor extends RecyclerView.Adapter<HouseAdaptor.ViewHolder> 
         Glide.with(context).asBitmap().load(HouseMain.house.get(i).getImage()).into(viewHolder.image);
 
         int price =  HouseMain.house.get(i).getPrice();
-        int id = HouseMain.house.get(i).getId();
+        int id_ = HouseMain.house.get(i).getId();
         String title = HouseMain.house.get(i).getTitle();
 
-        PayObject payObject = new PayObject(id,price,title);
+        PayObject payObject = new PayObject(id_,price,title);
         viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomePage.payList.add(payObject);
                 GoToProdectPage();
+                id = HouseMain.house.get(i).getId();
             }
         });
     }

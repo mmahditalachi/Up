@@ -23,6 +23,7 @@ import com.bumptech.glide.Glide;
 public class ConcertAdaptor extends RecyclerView.Adapter<ConcertAdaptor.ViewHolder> {
 
     Context context;
+    public static int razie ;
 
     public ConcertAdaptor(Context context) {
         this.context = context;
@@ -55,6 +56,7 @@ public class ConcertAdaptor extends RecyclerView.Adapter<ConcertAdaptor.ViewHold
             public void onClick(View v) {
                 HomePage.payList.add(payObject);
                 GoToPayment();
+                razie=5;
             }
         });
     }
